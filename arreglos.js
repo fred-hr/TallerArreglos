@@ -33,9 +33,14 @@ function pintarArregloDerecho() {
         contenido += "<tr>";
         contenido += "<td><button class='btn-mover'>⬅</button></td>";
         contenido += "<td>" + arregloDerecho[i] + "</td>";
-        contenido += "<td><button class='btn-eliminar'>Eliminar</button></td>";
+        contenido += "<td><button class='btn-eliminar' onclick='eliminarDerecho(" + i + ")'>Eliminar</button></td>";
         contenido += "</tr>";
     }
 
     document.getElementById("tablaDerecha").innerHTML = contenido;
+}
+
+function eliminarDerecho(indice) {
+    arregloDerecho.splice(indice, 1);
+    pintarArregloDerecho();
 }
