@@ -14,7 +14,7 @@ function pintarArregloIzquierdo() {
         contenido += "<tr>";
         contenido += "<td>" + arregloIzquierdo[i] + "</td>";
         contenido += "<td><button class='btn-eliminar' onclick='eliminarIzquierdo(" + i + ")'>Eliminar</button></td>";
-        contenido += "<td><button class='btn-mover'>➜</button></td>";
+        contenido += "<td><button class='btn-mover' onclick='moverHaciaDerecha(" + i + ")'>➜</button></td>";
         contenido += "</tr>";
     }
 
@@ -42,5 +42,13 @@ function pintarArregloDerecho() {
 
 function eliminarDerecho(indice) {
     arregloDerecho.splice(indice, 1);
+    pintarArregloDerecho();
+}
+
+function moverHaciaDerecha(indice) {
+    let valor = arregloIzquierdo[indice];
+    arregloDerecho.push(valor);
+    arregloIzquierdo.splice(indice, 1);
+    pintarArregloIzquierdo();
     pintarArregloDerecho();
 }
