@@ -25,3 +25,17 @@ function eliminarIzquierdo(indice) {
     arregloIzquierdo.splice(indice, 1);
     pintarArregloIzquierdo();
 }
+
+function pintarArregloDerecho() {
+    let contenido = "";
+
+    for (let i = 0; i < arregloDerecho.length; i++) {
+        contenido += "<tr>";
+        contenido += "<td><button class='btn-mover'>⬅</button></td>";
+        contenido += "<td>" + arregloDerecho[i] + "</td>";
+        contenido += "<td><button class='btn-eliminar'>Eliminar</button></td>";
+        contenido += "</tr>";
+    }
+
+    document.getElementById("tablaDerecha").innerHTML = contenido;
+}
